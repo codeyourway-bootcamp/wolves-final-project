@@ -1,9 +1,33 @@
-import { useState } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import Navbar from "./Components/NavBar";
+
+import Dashboard from "./Pages/Dashboard";
+import Login from "./Pages/Login";
+import LandingPage from "./Pages/LadingPage";
+
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: <LandingPage />,
+  },
+  {
+    path: "/Login",
+    element: <Login />,
+  },
+  {
+    path: "Dashboard",
+    element: <Dashboard />,
+  },
+]);
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <h1>HELLO WORLD</h1>;
+  return (
+    <>
+    <Navbar/>
+      <RouterProvider router={routes} />
+    </>
+  );
 }
 
 export default App;
