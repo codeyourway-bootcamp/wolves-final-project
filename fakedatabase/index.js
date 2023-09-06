@@ -23,11 +23,3 @@ export const user_registration = new Promise((resolve, reject) => {
   }, 2000);
 });
 
-export const currency = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve({
-      labels: ["currency_id", "currency_title", "symbol"],
-      data: { currency_id: "EUR", currency_title: "EURO", symbol: "€" },
-    });
-  }, 2000);
-});
