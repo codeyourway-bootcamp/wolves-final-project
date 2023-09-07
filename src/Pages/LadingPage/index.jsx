@@ -2,6 +2,6 @@
 
 export default function LandingPage() {
   return (
-    <Navbar/>
+    <h1>Landin my page</h1>
   )
 }

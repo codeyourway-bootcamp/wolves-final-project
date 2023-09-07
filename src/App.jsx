@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 
 import Dashboard from "./Pages/Dashboard";
 import Login from "./Pages/Login";
@@ -8,7 +9,7 @@ import LandingPage from "./Pages/LadingPage";
 
 const routes = createBrowserRouter([
   {
-    path: "/",
+    path: "/LandingPage",
     element: <LandingPage />,
   },
   {
@@ -26,8 +27,11 @@ function App() {
     <>
     <Navbar/>
       <RouterProvider router={routes} />
+      <Footer/>
+      
     </>
   );
 }
+
 
 export default App;
