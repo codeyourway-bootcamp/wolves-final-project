@@ -1,7 +1,31 @@
-
+import './style.css'
 
 export default function Footer() {
   return (
-    <div>Footer</div>
+    <footer claclassNamess="page-footer">
+    <div className="container">
+      <div className="row">
+        <div className="col l6 s12">
+          <h5 className="white-text">QuickBook</h5>
+          <p className="grey-text text-lighten-4">This is the best booking service in the world</p>
+        </div>
+        <div className="col l4 offset-l2 s12">
+          <h5 className="white-text">Social Media</h5>
+          <ul>
+            <li><a className="grey-text text-lighten-3" href="#!">Twitter</a></li>
+            <li><a className="grey-text text-lighten-3" href="#!">Facebook</a></li>
+            <li><a className="grey-text text-lighten-3" href="#!">Instagram</a></li>
+            <li><a className="grey-text text-lighten-3" href="#!">Linkedin</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div className="footer-copyright">
+      <div className="container">
+      © 2023 Copyright Text
+      <a className="grey-text text-lighten-4 right" href="#!">More services</a>
+      </div>
+    </div>
+  </footer>
   )
 }
