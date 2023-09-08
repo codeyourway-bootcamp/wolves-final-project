@@ -1,0 +1,12 @@
+
+.container {
+  display: flex;
+  min-height: 10vh;
+  min-width: 100%;
+  flex-direction: column;
+  background-color: rgb(209, 109, 109);
+}
+
+.footer-copyright{
+  flex: 1 0 auto;
+}
