@@ -36,6 +36,7 @@ export default function Login() {
     <div className="container">
       <h1
         style={{
+          color: "gray",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -46,6 +47,7 @@ export default function Login() {
       </h1>
       <p
         style={{
+          color: "gray",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
