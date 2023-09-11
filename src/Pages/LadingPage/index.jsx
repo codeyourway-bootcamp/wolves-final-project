@@ -6,7 +6,7 @@ export default function LandingPage() {
     <div class="box">
       <img src="public\images\image.png" alt="Imagem-logo" />
     </div>
-    <br/>
+    
 
     
     <div class="box1">Welcome to Quickbook! We're thrilled to have you here. At
