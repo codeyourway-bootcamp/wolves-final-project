@@ -6,6 +6,7 @@ import Dashboard from "./Pages/Dashboard";
 import Login from "./Pages/Login";
 import LandingPage from "./Pages/LadingPage";
 import Register from "./Pages/Register";
+import Services from "./Pages/Services";
 
 const routes = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const routes = createBrowserRouter([
     path: "/Register", 
     element: <Register /> 
   },
+  {
+    path: "/Services",
+    element: <Services />,
+  }
 ]);
 
 function App() {
