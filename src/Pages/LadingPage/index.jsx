@@ -1,5 +1,5 @@
 import './style.css' 
-
+import Button from '../../Components/Button';
 export default function LandingPage() {
   return (
     <>
@@ -7,7 +7,10 @@ export default function LandingPage() {
     <div class="box">
       <img src="public\images\image.png" alt="Imagem-logo" />
     </div>
+    <br/>
 
+    <Button size={'large'} onClick={()=>{alert('Botão login de dentro da lading page')}}>Login</Button>
+    <Button isRounded={true} size={'small'} color={'black'} onClick={()=>{alert('Botão login de dentro da lading page')}}>Login</Button>
 
     <div class="box1">Welcome to Quickbook! We're thrilled to have you here. At
         Quickbook, we specialize in making your life easier by offering a
@@ -19,6 +22,7 @@ export default function LandingPage() {
         Quickbook has in store for you. Happy booking!</div>
     
 </div>
+
 
     </>
   );
