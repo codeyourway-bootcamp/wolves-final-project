@@ -1,0 +1,19 @@
+.services-container{
+    display:flex;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: brown;
+    margin: 10px;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+.page-services-container{
+    display:flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border-width: 2px;
+    margin: 10px;
+    padding: 150px;
+    
+}

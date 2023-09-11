@@ -1,5 +1,4 @@
 import './style.css' 
-import Button from '../../Components/Button';
 export default function LandingPage() {
   return (
     <>
@@ -9,9 +8,7 @@ export default function LandingPage() {
     </div>
     <br/>
 
-    <Button size={'large'} onClick={()=>{alert('Botão login de dentro da lading page')}}>Login</Button>
-    <Button isRounded={true} size={'small'} color={'black'} onClick={()=>{alert('Botão login de dentro da lading page')}}>Login</Button>
-
+    
     <div class="box1">Welcome to Quickbook! We're thrilled to have you here. At
         Quickbook, we specialize in making your life easier by offering a
         seamless platform for all your booking and reservation needs. Whether

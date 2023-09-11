@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import { Container } from './styles';
+
 
 function Button({children, onClick, size, color, isRounded}) {
     const defaultColor = 'rgb(38, 166, 154)'
