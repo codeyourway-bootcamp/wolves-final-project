@@ -40,7 +40,8 @@ export const Menu = new Promise((resolve, reject) => {
         "price",
         "Currency"
       ],
-      data: {
+      data:[ 
+      {
         service_id :"131313",
         service_name : "Corte M",
         description : "Corte Masculino",
@@ -53,14 +54,15 @@ export const Menu = new Promise((resolve, reject) => {
         description : "Corte Masculino + sobrancelhas + barba ",
         duration : "28 min",
         price :"13"
-      }
+      },
       {
         service_id :"511515",
         service_name : "barba",
         description : "Corte barba + sobrancelhas",
         duration : "10 min",
         price :"6"
-      }
+      },
+    ],
     });
   }, 2000);
 });
