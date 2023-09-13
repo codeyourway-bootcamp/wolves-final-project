@@ -2,34 +2,33 @@ import React from 'react';
 
 // import { Container } from './styles';
 
-function ListEvents() {
-    return <div>  <table>
+function ListEvents(props) {
+    //console.log(props.data)
+    return (
+    <div style={{margin: "40px", padding: "20px"}}>  
+        <table>
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Item Name</th>
-                <th>Item Price</th>
+                <th>Data</th>
+                <th>Hora</th>
             </tr>
         </thead>
 
         <tbody>
-            <tr>
-                <td>Alvin</td>
-                <td>Eclair</td>
-                <td>$0.87</td>
-            </tr>
-            <tr>
-                <td>Alan</td>
-                <td>Jellybean</td>
-                <td>$3.76</td>
-            </tr>
-            <tr>
-                <td>Jonathan</td>
-                <td>Lollipop</td>
-                <td>$7.00</td>
-            </tr>
+            {props.data.map((item)=>{
+                return (
+                    <tr key={item.name}>
+                        <td>{item.name}</td>
+                        <td>{item.date}</td>
+                        <td>{item.hour}</td>
+                    </tr>
+                )
+            })
+            }
         </tbody>
-    </table></div>
+    </table>
+    </div>)
 }
 
 export default ListEvents;
