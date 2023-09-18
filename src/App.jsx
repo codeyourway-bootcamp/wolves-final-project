@@ -1,17 +1,17 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
 
 import Dashboard from "./Pages/Dashboard";
 import Login from "./Pages/Login";
 import LandingPage from "./Pages/LadingPage";
 import Register from "./Pages/Register";
 import Services from "./Pages/Services";
+import ClientsCalendar from "./Pages/ClientsCalendar";
 
 const routes = createBrowserRouter([
   {
-    path: "/LandingPage",
+    path: "/",
     element: <LandingPage />,
   },
   {
@@ -29,6 +29,10 @@ const routes = createBrowserRouter([
   {
     path: "/Services",
     element: <Services />,
+  },
+  {
+    path: "/clients-calendar",
+    element: <ClientsCalendar />
   }
 ]);
 
@@ -37,11 +41,8 @@ function App() {
     <>
       <Navbar />
       <RouterProvider router={routes} />
-      <Footer/>
-      
     </>
   );
 }
-
 
 export default App;

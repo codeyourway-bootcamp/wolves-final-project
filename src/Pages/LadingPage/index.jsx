@@ -1,10 +1,6 @@
 import './style.css' 
 export default function LandingPage() {
   return (
-<<<<<<< HEAD
-    <h1>Landin my page</h1>
-  )
-=======
     <>
     <div class="container2">
     <div class="box">
@@ -27,7 +23,6 @@ export default function LandingPage() {
 
     </>
   );
->>>>>>> master
 }
 
 
