@@ -6,6 +6,8 @@ import Footer from "./Components/Footer";
 import Dashboard from "./Pages/Dashboard";
 import Login from "./Pages/Login";
 import LandingPage from "./Pages/LadingPage";
+import Register from "./Pages/Register";
+import Services from "./Pages/Services";
 
 const routes = createBrowserRouter([
   {
@@ -17,15 +19,23 @@ const routes = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "Dashboard",
+    path: "/Dashboard",
     element: <Dashboard />,
   },
+  { 
+    path: "/Register", 
+    element: <Register /> 
+  },
+  {
+    path: "/Services",
+    element: <Services />,
+  }
 ]);
 
 function App() {
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <RouterProvider router={routes} />
       <Footer/>
       
