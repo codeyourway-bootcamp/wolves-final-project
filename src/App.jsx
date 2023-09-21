@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 
 import Dashboard from "./Pages/Dashboard";
 import Login from "./Pages/Login";
@@ -9,6 +10,7 @@ import Register from "./Pages/Register";
 import Services from "./Pages/Services";
 import ClientsCalendar from "./Pages/ClientsCalendar";
 import Checkout from "./Pages/Checkout";
+
 
 const routes = createBrowserRouter([
   {
@@ -45,7 +47,9 @@ function App() {
   return (
     <>
       <Navbar />
+      
       <RouterProvider router={routes} />
+      <Footer/>
     </>
   );
 }
