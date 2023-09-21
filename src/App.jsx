@@ -8,6 +8,7 @@ import LandingPage from "./Pages/LadingPage";
 import Register from "./Pages/Register";
 import Services from "./Pages/Services";
 import ClientsCalendar from "./Pages/ClientsCalendar";
+import Checkout from "./Pages/Checkout";
 
 const routes = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const routes = createBrowserRouter([
   {
     path: "/clients-calendar",
     element: <ClientsCalendar />
+  },
+   {
+    path: "/checkout",
+    element: <Checkout />
   }
 ]);
 
