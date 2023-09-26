@@ -9,6 +9,7 @@ import Register from "./Pages/Register";
 import Services from "./Pages/Services";
 import ClientsCalendar from "./Pages/ClientsCalendar";
 
+
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -41,6 +42,7 @@ function App() {
     <>
       <Navbar />
       <RouterProvider router={routes} />
+      
     </>
   );
 }
