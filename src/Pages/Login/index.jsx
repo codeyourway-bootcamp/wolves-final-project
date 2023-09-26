@@ -1,8 +1,13 @@
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { user_registration } from "../../../fakedatabase";
+import { useAuth } from "../../AuthContext"
+
+
 
 export default function Login() {
+  const { login } = useAuth();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,6 +30,7 @@ export default function Login() {
       );
     });
     if (usuarioCorrespondente) {
+      login();
       navigate('/dashboard');
     } else {
       window.M.toast({html: 'Incorrect email or password.', classes: 'red darken-3', displayLength: 4000});
@@ -81,5 +87,6 @@ export default function Login() {
         </button>
       </form>
     </div>
+    
   );
 }
