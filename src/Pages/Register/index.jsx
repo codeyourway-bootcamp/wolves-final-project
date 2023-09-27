@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Register() {
   const [Form, setForm] = useState();
+  const navigate = useNavigate();
 
   const validateForm = () => {
     if (!Form) return false;
@@ -25,6 +26,8 @@ export default function Register() {
     e.preventDefault();
     if (validateForm()) {
       localStorage.setItem("save", JSON.stringify(Form));
+      window.M.toast({ html: "Registration completed successfully." });
+      navigate("/login");
     } else {
       window.M.toast({
         html: "Please fill in all the fields.",
