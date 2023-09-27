@@ -1,6 +1,6 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+// import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AuthProvider } from "./AuthContext";
-
+import { Route, Routes } from "react-router-dom";
 
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
@@ -13,49 +13,54 @@ import Services from "./Pages/Services";
 import ClientsCalendar from "./Pages/ClientsCalendar";
 import Checkout from "./Pages/Checkout";
 
-const routes = createBrowserRouter([
-  {
-    path: "/",
-    element: <LandingPage />,
-  },
-  {
-    path: "/Login",
-    element: <Login />,
-  },
-  {
-    path: "/Dashboard",
-    element: <Dashboard />,
-  },
-  {
-    path: "/Register",
-    element: <Register />,
-  },
-  {
-    path: "/Services",
-    element: <Services />,
-  },
-  {
-    path: "/clients-calendar",
-    element: <ClientsCalendar />,
-  },
-  {
-    path: "/checkout",
-    element: <Checkout />,
-  },
-]);
+// const routes = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <LandingPage />,
+//   },
+//   {
+//     path: "/login",
+//     element: <Login />,
+//   },
+//   {
+//     path: "/dashboard",
+//     element: <Dashboard />,
+//   },
+//   {
+//     path: "/register",
+//     element: <Register />,
+//   },
+//   {
+//     path: "/services",
+//     element: <Services />,
+//   },
+//   {
+//     path: "/clients-calendar",
+//     element: <ClientsCalendar />,
+//   },
+//   {
+//     path: "/checkout",
+//     element: <Checkout />,
+//   },
+// ]);
 
 function App() {
   return (
     <>
-    
       <AuthProvider>
+        {/* <RouterProvider router={routes} /> */}
         <Navbar />
-       
-        <RouterProvider router={routes} />
-  
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/clientsCalendar" element={<ClientsCalendar />} />
+          <Route path="/checkout" element={<Checkout />} />
+        </Routes>
         <Footer />
       </AuthProvider>
-      
     </>
   );
 }
