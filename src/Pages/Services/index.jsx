@@ -23,6 +23,11 @@ function Services({ servicesList }) {
   ];
   const [total, setTotal] = useState([]);
 
+  const removeElement = (DeleteTotal) => {
+    const newTotal = total.filter((total) => total !== DeleteTotal);
+    setTotal(newTotal);
+  };
+
   return (
     <div className="page-services-container">
       {data.map((item) => {
@@ -58,7 +63,11 @@ function Services({ servicesList }) {
           return (
             <h5 className="conteiner">
               {item.serviceName} - <span className="total">{item.price}€</span>{" "}
-              <button className="close">X</button>
+              <button
+                onClick={() => removeElement(item)}
+                className="bi bi-trash-fill"
+                id="close"
+              ></button>
             </h5>
           );
         })}
