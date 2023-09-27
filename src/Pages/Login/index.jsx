@@ -1,10 +1,7 @@
-
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { user_registration } from "../../../fakedatabase";
-import { useAuth } from "../../AuthContext"
-
-
+import { useAuth } from "../../AuthContext";
 
 export default function Login() {
   const { login } = useAuth();
@@ -13,30 +10,34 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  user_registration.then(function (response) {
-    const usuarioCorrespondente = response.data.find(function (item) {
-      const formatDataUser = {
-        user_email: email,
-        user_password: password,
-      };
-      const formatDataResponse = {
-        user_email: item.user_email,
-        user_password: item.user_password,
-      };
-      return (
-        JSON.stringify(formatDataResponse) === JSON.stringify(formatDataUser)
-      );
+    user_registration.then(function (response) {
+      const usuarioCorrespondente = response.data.find(function (item) {
+        const formatDataUser = {
+          user_email: email,
+          user_password: password,
+        };
+        const formatDataResponse = {
+          user_email: item.user_email,
+          user_password: item.user_password,
+        };
+        return (
+          JSON.stringify(formatDataResponse) === JSON.stringify(formatDataUser)
+        );
+      });
+      if (usuarioCorrespondente) {
+        login();
+        navigate("/dashboard");
+      } else {
+        window.M.toast({
+          html: "Incorrect email or password.",
+          classes: "red darken-3",
+          displayLength: 4000,
+        });
+      }
     });
-    if (usuarioCorrespondente) {
-      login();
-      navigate('/dashboard');
-    } else {
-      window.M.toast({html: 'Incorrect email or password.', classes: 'red darken-3', displayLength: 4000});
-    }
-  });
-};
+  };
 
   return (
     <div className="container">
@@ -87,6 +88,5 @@ export default function Login() {
         </button>
       </form>
     </div>
-    
   );
 }
