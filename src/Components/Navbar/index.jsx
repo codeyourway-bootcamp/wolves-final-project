@@ -1,15 +1,38 @@
-
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../AuthContext";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+  const { isAuthenticated, logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
   return (
-    <nav style={{ backgroundColor: '#26a69a' }}>
+    <nav style={{ backgroundColor: "#26a69a" }}>
       <div className="nav-wrapper">
-        <a href="/" className="brand-logo">QuickBook</a>
+        <a href="/" className="brand-logo">
+          QuickBook
+        </a>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
-          <li><a href="/login">Login</a></li>
-          <li><a href="/register">Register</a></li>
+          <li>
+            <a href="/login">Login</a>
+          </li>
+          <li>
+            <a href="/register">Register</a>
+          </li>
+          {isAuthenticated && (
+            <button
+              class="waves-effect waves-red btn-small red darken-3 "
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
+          )}
         </ul>
       </div>
     </nav>
-  )
+  );
 }

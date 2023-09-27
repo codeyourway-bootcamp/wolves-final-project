@@ -20,6 +20,45 @@ export default function LandingPage() {
     
 </div>
 
+  <div className="row">
+    <div className="col s12 m6">
+      <div className="card">
+        <div className="card-image">
+          <img src="https://img.freepik.com/fotos-premium/espaco-masculino-interior-de-barbearia-moderna-gerado-por-ia_866663-5580.jpg" alt="" />
+          <span className="card-title">Style & Tradition Barber Shop</span>
+          <a  href="/services" className="btn-floating halfway-fab waves-effect waves-light red"><i className="material-icons">Go</i></a>
+        </div>
+        <div className="card-content">
+          <p>Welcome to the Style & Tradition Barber Shop! Merging classic techniques with the latest trends, we ensure top-quality service tailored to meet the individual needs of every customer.</p>
+        </div>
+      </div>
+    </div>
+    <div className="col s12 m6">
+      <div className="card">
+        <div className="card-image">
+          <img src="https://img.freepik.com/fotos-premium/espaco-masculino-interior-de-barbearia-moderna-gerado-por-ia_866663-5580.jpg" alt="" />
+          <span className="card-title">Style & Tradition Barber Shop</span>
+          <a  href="/services" className="btn-floating halfway-fab waves-effect waves-light red"><i className="material-icons">Go</i></a>
+        </div>
+        <div className="card-content">
+          <p>Welcome to the Style & Tradition Barber Shop! Merging classic techniques with the latest trends, we ensure top-quality service tailored to meet the individual needs of every customer.</p>
+        </div>
+      </div>
+    </div>
+    <div className="col s12 m6">
+      <div className="card">
+        <div className="card-image">
+          <img src="https://img.freepik.com/fotos-premium/espaco-masculino-interior-de-barbearia-moderna-gerado-por-ia_866663-5580.jpg" alt="" />
+          <span className="card-title">Style & Tradition Barber Shop</span>
+          <a  href="/services" className="btn-floating halfway-fab waves-effect waves-light red"><i className="material-icons">Go</i></a>
+        </div>
+        <div className="card-content">
+          <p>Welcome to the Style & Tradition Barber Shop! Merging classic techniques with the latest trends, we ensure top-quality service tailored to meet the individual needs of every customer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
     </>
   );
