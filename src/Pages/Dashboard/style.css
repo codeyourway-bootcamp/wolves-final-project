@@ -1,0 +1,20 @@
+
+
+.banner {
+    /* The image used */
+    background-image:url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+    
+    height: 600px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+  
+  }
+
+.banner h1,h5 {
+    color: antiquewhite;
+    text-align: center;
+    padding-top: 50px;
+}
+
+
+    
