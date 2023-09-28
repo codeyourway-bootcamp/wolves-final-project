@@ -1,6 +1,7 @@
 // import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AuthProvider } from "./AuthContext";
 import { Route, Routes } from "react-router-dom";
+import "./globalstyle.css";
 
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
@@ -59,6 +60,7 @@ function App() {
           <Route path="/clientsCalendar" element={<ClientsCalendar />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
+
         <Footer />
       </AuthProvider>
     </>

@@ -12,7 +12,6 @@ export default function Register() {
       "name",
       "lastname",
       "companyname",
-      "servicecategory",
       "password",
       "email",
     ];
@@ -38,42 +37,56 @@ export default function Register() {
   };
 
   return (
-    <div className="row">
-      <form className="col s12">
-        <div className="row">
-          <div className="input-field col s6">
-            <input
-              onChange={(e) => setForm({ ...Form, name: e.target.value })}
-              id="first_name"
-              type="text"
-              className="validate"
-            />
-            <label for="first_name">First Name</label>
+    <>
+      <div
+        style={{
+          color: "gray",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "35px",
+          fontSize: "30px",
+        }}
+      >
+        Fill in your details to complete the registration
+      </div>
+      <div className="row">
+        <form className="col s12">
+          <div className="row">
+            <div className="input-field col s6">
+              <input
+                onChange={(e) => setForm({ ...Form, name: e.target.value })}
+                id="first_name"
+                type="text"
+                className="validate"
+              />
+              <label for="first_name">First Name</label>
+            </div>
+            <div className="input-field col s6">
+              <input
+                onChange={(e) => setForm({ ...Form, lastname: e.target.value })}
+                id="last_name"
+                type="text"
+                className="validate"
+              />
+              <label for="last_name">Last Name</label>
+            </div>
           </div>
-          <div className="input-field col s6">
-            <input
-              onChange={(e) => setForm({ ...Form, lastname: e.target.value })}
-              id="last_name"
-              type="text"
-              className="validate"
-            />
-            <label for="last_name">Last Name</label>
+          <div className="row">
+            <div className="input-field col s12">
+              <input
+                onChange={(e) =>
+                  setForm({ ...Form, companyname: e.target.value })
+                }
+                id="company_name"
+                type="text"
+                className="validate"
+              />
+              <label for="">Company Name</label>
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="input-field col s12">
-            <input
-              onChange={(e) =>
-                setForm({ ...Form, companyname: e.target.value })
-              }
-              id="company_name"
-              type="text"
-              className="validate"
-            />
-            <label for="">Company Name</label>
-          </div>
-        </div>
-        <div className="row">
+          {/* <div className="row">
           <div className="input-field col s12">
             <input
               onChange={(e) =>
@@ -85,33 +98,34 @@ export default function Register() {
             />
             <label for="">Service Category</label>
           </div>
-        </div>
-        <div className="row">
-          <div className="input-field col s12">
-            <input
-              onChange={(e) => setForm({ ...Form, password: e.target.value })}
-              id="password"
-              type="password"
-              className="validate"
-            />
-            <label for="password">Password</label>
+        </div> */}
+          <div className="row">
+            <div className="input-field col s12">
+              <input
+                onChange={(e) => setForm({ ...Form, password: e.target.value })}
+                id="password"
+                type="password"
+                className="validate"
+              />
+              <label for="password">Password</label>
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="input-field col s12">
-            <input
-              onChange={(e) => setForm({ ...Form, email: e.target.value })}
-              id="email"
-              type="email"
-              className="validate"
-            />
-            <label for="email">Email</label>
+          <div className="row">
+            <div className="input-field col s12">
+              <input
+                onChange={(e) => setForm({ ...Form, email: e.target.value })}
+                id="email"
+                type="email"
+                className="validate"
+              />
+              <label for="email">Email</label>
+            </div>
           </div>
-        </div>
-        <button onClick={handleSubmit} className="btn" type="submit">
-          Submit
-        </button>
-      </form>
-    </div>
+          <button onClick={handleSubmit} className="btn" type="submit">
+            Submit
+          </button>
+        </form>
+      </div>
+    </>
   );
 }

@@ -11,7 +11,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav style={{ backgroundColor: "#26a69a" }}>
+    <nav style={{ backgroundColor: "#1b0e02", padding: "0 20px" }}>
       <div className="nav-wrapper">
         <a href="/" className="brand-logo">
           QuickBook
