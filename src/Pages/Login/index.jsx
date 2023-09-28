@@ -59,6 +59,7 @@ export default function Login() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
+          fontSize: "30px",
         }}
       >
         Dear customer, provide your login to access the dashboard.
