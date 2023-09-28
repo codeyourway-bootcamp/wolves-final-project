@@ -26,7 +26,9 @@ export default function Checkout() {
   const handleSend = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      window.M.toast({ html: "Sent Information!" });
+      window.M.toast({
+        html: "Sent Information! Make the payment on site to the professional. Thanks!",
+      });
       localStorage.setItem("save", JSON.stringify(Form));
       navigate("/");
     } else {
@@ -35,12 +37,12 @@ export default function Checkout() {
   };
   return (
     <>
-      <div className="Header">
+      <div className="Header" style={{ color: "gray" }}>
         <h4>Company Name:</h4>
         <h4>Adress:</h4>
       </div>
 
-      <label>Select Employee</label>
+      <label style={{ fontSize: "15px" }}>Select Employee</label>
       <select className="browser-default">
         <option value="" disabled selected>
           Click and Choose your Barber
@@ -49,10 +51,11 @@ export default function Checkout() {
         <option value="2">Pedro</option>
       </select>
       <div className="Calendar">
-        <label>Select day and hour</label>
+        <label style={{ fontSize: "15px" }}>Select day and hour</label>
       </div>
-      <div>
+      <div className="App">
         <Datetime
+          className="custom-datetime"
           onChange={(date) => setSelectedDate(date)}
           input={false}
           open={true}
@@ -62,7 +65,7 @@ export default function Checkout() {
           closeOnSelect={true}
         />
         {selectedDate && (
-          <p>
+          <p style={{ color: "white" }}>
             Selected Date and Time: {selectedDate.format("YYYY-MM-DD HH:00")}
           </p>
         )}
@@ -71,6 +74,8 @@ export default function Checkout() {
         style={{
           display: "flex",
           justifyContent: "center",
+          color: "gray",
+          fontSize: "30px",
           //   maxWidth: "300px",
           //   padding: "20px",
           //   border: "1x solid #ccc ",
