@@ -7,18 +7,22 @@ function Services({ servicesList }) {
     {
       serviceName: "Hair",
       price: 15,
+      id: 1,
     },
     {
       serviceName: "Beard",
       price: 7,
+      id: 2,
     },
     {
       serviceName: "Coloring",
       price: 5,
+      id: 3,
     },
     {
       serviceName: "Facial Treatment",
       price: 50,
+      id: 4,
     },
   ];
   const [total, setTotal] = useState([]);
@@ -33,9 +37,10 @@ function Services({ servicesList }) {
       {data.map((item) => {
         return (
           <div className="services-container" key={item.serviceName}>
-            <p>{item.serviceName}</p>
+            <p className="texto">{item.serviceName}</p>
             <div
               style={{
+                fontSize: "20px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -57,6 +62,7 @@ function Services({ servicesList }) {
           </div>
         );
       })}
+      <div className="divisao"></div>
       <div>
         <h4>Itens no carrinho:</h4>
         {total.map(function (item) {
@@ -71,6 +77,9 @@ function Services({ servicesList }) {
             </h5>
           );
         })}
+        <div className="divisao2"></div>
+
+        <button id="checkout">Checkout</button>
       </div>
     </div>
   );
