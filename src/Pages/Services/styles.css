@@ -1,12 +1,24 @@
+.titulo {
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .texto {
-  font-size: 20px;
+  font-size: 24px;
 }
 
 h4 {
   font-size: 30px;
+  color: grey;
+  padding: 21px 20px 20px;
+  background-color: aliceblue;
+  border-radius: 20px;
 }
 h5 {
-  font-size: 22px;
+  font-size: 24px;
+  color: grey;
 }
 .services-container {
   display: flex;
@@ -17,6 +29,9 @@ h5 {
   justify-content: space-between;
   padding: 10px;
   align-items: center;
+  color: gray;
+  font-size: 20px;
+  background-color: aliceblue;
 }
 .page-services-container {
   display: flex;
@@ -24,7 +39,7 @@ h5 {
   border-radius: 10px;
   border-width: 2px;
   margin: 10px;
-  padding: 150px;
+  padding: 0px 100px 100px 100px;
 }
 
 #close:active {
@@ -37,40 +52,44 @@ h5 {
 
 #close {
   position: absolute;
-  right: 200px;
+  right: 160px;
 }
 #close:hover {
   cursor: pointer;
 }
 #checkout {
-  margin-top: 20px;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
-  display: table-cell;
-  vertical-align: middle;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  background-color: #26a69a;
+  margin-top: 20px;
+  padding: 20px 810px 20px;
+  border-radius: 10px;
+  color: white;
 }
 #checkout:focus {
-  background-color: rgb(19, 181, 146);
-  color: black;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 #checkout:hover {
   cursor: pointer;
 }
 .conteiner {
   margin-top: 40px;
+  background-color: aliceblue;
+  border-radius: 20px;
+  padding: 20px;
 }
 
 .divisao {
+  margin-top: 20px;
   padding-right: 200px;
   padding-bottom: 10px;
-  background-color: rgb(19, 181, 146);
+  background-color: rgb(255, 255, 255);
 }
 .divisao2 {
   padding-right: 200px;
   margin-top: 30px;
   padding-bottom: 10px;
-  background-color: rgb(19, 181, 146);
+  background-color: rgb(255, 255, 255);
 }
