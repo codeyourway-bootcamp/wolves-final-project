@@ -10,10 +10,13 @@
 }
 
 h4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 30px;
   color: grey;
   padding: 21px 20px 20px;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
   border-radius: 20px;
 }
 h5 {

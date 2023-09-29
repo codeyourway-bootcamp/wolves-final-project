@@ -41,7 +41,7 @@ export default function Footer() {
           className="footer-copyright"
           style={{ textAlign: "center", backgroundColor: "#1b0e02" }}
         >
-          <div className="container">© 2014 Copyright Text</div>
+          <div className="container">© 2023 Codeyourway Copyright</div>
         </div>
       </footer>
     </>
