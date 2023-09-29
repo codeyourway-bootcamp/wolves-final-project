@@ -12,14 +12,15 @@ export default function LandingPage() {
         </div>
 
         <div class="box1">
-          Welcome to Quickbook! We're thrilled to have you here. At Quickbook,
-          we specialize in making your life easier by offering a seamless
-          platform for all your booking and reservation needs. Whether you're
-          looking to reserve a table at your favorite restaurant, book tickets
-          for an upcoming event, or schedule an appointment, Quickbook is your
-          go-to online destination for instant, hassle-free bookings. Experience
-          convenience like never before. Dive in and explore what Quickbook has
-          in store for you. Happy booking!
+          Welcome to Quickbook! We're ecstatic to have you onboard. At
+          Quickbook, our passion is streamlining your grooming and styling
+          experience. Whether you're scheduling a fresh cut at a trusted
+          barbershop, booking a rejuvenating spa session at a chic salon, or
+          arranging for that much-awaited hair transformation, Quickbook is your
+          prime online platform for immediate, effortless appointments. No more
+          waiting lines, no more uncertainty. Dive in, and discover the ease
+          Quickbook brings to your grooming journey. Ready for a fresh look?
+          We've got you covered. Happy booking!
         </div>
       </div>
       <div className="card-principal">

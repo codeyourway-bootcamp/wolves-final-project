@@ -29,6 +29,7 @@ export default function Checkout() {
   };
   const isValidDate = (currentDate) => {
     const day = currentDate.day();
+
     return day !== 0 && day !== 6;
   };
   const handleSend = (e) => {

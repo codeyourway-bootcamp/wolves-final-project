@@ -86,9 +86,10 @@ function Services({ servicesList }) {
 
           <button
             id="checkout"
-            onClick={() =>
-              navigate("/checkout", { state: { selectedServices: total } })
-            }
+            onClick={() => {
+              window.scrollTo(0, 0);
+              navigate("/checkout", { state: { selectedServices: total } });
+            }}
           >
             Checkout
           </button>
