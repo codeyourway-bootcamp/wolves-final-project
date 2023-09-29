@@ -22,7 +22,14 @@ function ClientsCalendar() {
   ];
   return (
     <div>
-      <div style={{ textAlign: "center", padding: "30px", fontSize: "24px" }}>
+      <div
+        style={{
+          textAlign: "center",
+          padding: "30px",
+          fontSize: "24px",
+          color: "gray",
+        }}
+      >
         Clients Calendar
       </div>
       <ListEvents data={eventsListExemple} />

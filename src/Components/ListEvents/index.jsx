@@ -5,7 +5,7 @@ import React from "react";
 function ListEvents(props) {
   //console.log(props.data)
   return (
-    <div style={{ margin: "40px", padding: "20px" }}>
+    <div style={{ margin: "40px", padding: "20px", color: "gray" }}>
       <table>
         <thead>
           <tr>

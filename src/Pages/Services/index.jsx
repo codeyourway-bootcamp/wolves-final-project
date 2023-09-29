@@ -25,6 +25,16 @@ function Services({ servicesList }) {
       price: 50,
       id: 4,
     },
+    {
+      serviceName: "Eyebrows",
+      price: 2,
+      id: 5,
+    },
+    {
+      serviceName: "Razor shave",
+      price: 3,
+      id: 6,
+    },
   ];
   const [total, setTotal] = useState([]);
   const navigate = useNavigate();
@@ -57,7 +67,14 @@ function Services({ servicesList }) {
                   size={"small"}
                   color={"orange"}
                   onClick={() => {
-                    setTotal([...total, item]);
+                    const filteredTotal = total.filter((filteredItem) => {
+                      return filteredItem.id === item.id;
+                    });
+                    if (filteredTotal.length === 0) {
+                      setTotal([...total, item]);
+                    } else {
+                      alert("produto já incluido " + item.serviceName);
+                    }
                   }}
                 >
                   select
@@ -84,7 +101,13 @@ function Services({ servicesList }) {
           })}
           <div className="divisao2"></div>
 
-          <button id="checkout" onClick={() => navigate("/checkout")}>
+          <button
+            id="checkout"
+            onClick={() => {
+              window.scrollTo(0, 0);
+              navigate("/checkout", { state: { selectedServices: total } });
+            }}
+          >
             Checkout
           </button>
         </div>
