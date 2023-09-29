@@ -56,6 +56,7 @@ export default function Register() {
           <div className="row">
             <div className="input-field col s6">
               <input
+                style={{ color: "white" }}
                 onChange={(e) => setForm({ ...Form, name: e.target.value })}
                 id="first_name"
                 type="text"
@@ -65,6 +66,7 @@ export default function Register() {
             </div>
             <div className="input-field col s6">
               <input
+                style={{ color: "white" }}
                 onChange={(e) => setForm({ ...Form, lastname: e.target.value })}
                 id="last_name"
                 type="text"
@@ -76,6 +78,7 @@ export default function Register() {
           <div className="row">
             <div className="input-field col s12">
               <input
+                style={{ color: "white" }}
                 onChange={(e) =>
                   setForm({ ...Form, companyname: e.target.value })
                 }
@@ -102,6 +105,7 @@ export default function Register() {
           <div className="row">
             <div className="input-field col s12">
               <input
+                style={{ color: "white" }}
                 onChange={(e) => setForm({ ...Form, password: e.target.value })}
                 id="password"
                 type="password"
@@ -113,6 +117,7 @@ export default function Register() {
           <div className="row">
             <div className="input-field col s12">
               <input
+                style={{ color: "white" }}
                 onChange={(e) => setForm({ ...Form, email: e.target.value })}
                 id="email"
                 type="email"

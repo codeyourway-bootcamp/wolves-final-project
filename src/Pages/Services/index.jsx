@@ -84,7 +84,12 @@ function Services({ servicesList }) {
           })}
           <div className="divisao2"></div>
 
-          <button id="checkout" onClick={() => navigate("/checkout")}>
+          <button
+            id="checkout"
+            onClick={() =>
+              navigate("/checkout", { state: { selectedServices: total } })
+            }
+          >
             Checkout
           </button>
         </div>

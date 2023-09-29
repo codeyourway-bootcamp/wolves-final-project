@@ -6,7 +6,7 @@ export default function LandingPage() {
         <div class="box">
           <img
             style={{ maxWidth: "830px" }}
-            src="public\images\image2.png"
+            src="images\image2.png"
             alt="Imagem-logo"
           />
         </div>

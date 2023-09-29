@@ -68,6 +68,7 @@ export default function Login() {
       <form onSubmit={handleSubmit}>
         <div className="input-field">
           <input
+            style={{ color: "white" }}
             id="email"
             type="email"
             value={email}
@@ -77,6 +78,7 @@ export default function Login() {
         </div>
         <div className="input-field">
           <input
+            style={{ color: "white" }}
             id="password"
             type="password"
             value={password}
