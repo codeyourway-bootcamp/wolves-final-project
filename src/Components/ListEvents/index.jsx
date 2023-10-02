@@ -5,10 +5,10 @@ import React from "react";
 function ListEvents(props) {
   //console.log(props.data)
   return (
-    <div style={{ margin: "40px", padding: "20px", color: "gray" }}>
+    <div style={{ margin: "40px", padding: "20px", color: "black", backgroundColor: "white" }}>
       <table>
         <thead>
-          <tr>
+          <tr style={{ borderWidth: "3px"}}>
             <th>Name</th>
             <th>Data</th>
             <th>Hora</th>
@@ -19,7 +19,7 @@ function ListEvents(props) {
         <tbody>
           {props.data.map((item) => {
             return (
-              <tr key={item.name}>
+              <tr style={{ borderWidth: "3px"}} key={item.name}>
                 <td>{item.name}</td>
                 <td>{item.date}</td>
                 <td>{item.hour}</td>
