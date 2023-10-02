@@ -44,8 +44,10 @@ import Checkout from "./Pages/Checkout";
 //     element: <Checkout />,
 //   },
 // ]);
-
 function App() {
+  const isLandingPage = ["/login", "/clientsCalendar"].includes(
+    location.pathname
+  );
   return (
     <>
       <AuthProvider>
@@ -61,6 +63,11 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
 
+        <div
+          style={{
+            marginBottom: isLandingPage ? "200px" : "",
+          }}
+        ></div>
         <Footer />
       </AuthProvider>
     </>
