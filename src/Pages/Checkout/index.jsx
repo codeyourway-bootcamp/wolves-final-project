@@ -6,6 +6,7 @@ import "./style.css";
 import { useLocation } from "react-router-dom";
 
 export default function Checkout() {
+  const [selectedEmployee, setSelectedEmployee] = useState("");
   const [selectedDate, setSelectedDate] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ export default function Checkout() {
     for (let field of requiredFields) {
       if (!Form[field] || !Form[field].trim()) return false;
     }
+
     return true;
   };
   const isValidDate = (currentDate) => {
@@ -35,6 +37,20 @@ export default function Checkout() {
   const handleSend = (e) => {
     e.preventDefault();
     if (validateForm()) {
+      const agendamentoAtual = {
+        data: selectedDate.format("YYYY-MM-DD"),
+        hora: selectedDate.format("HH:00"),
+        nome: Form.name,
+        email: Form.email,
+      };
+      const existingAgendamentos =
+        JSON.parse(localStorage.getItem(selectedEmployee)) || [];
+
+      localStorage.setItem(
+        selectedEmployee,
+        JSON.stringify([...existingAgendamentos, agendamentoAtual])
+      );
+
       window.M.toast({
         html: "Sent Information! Make the payment on site to the professional. Thanks!",
       });
@@ -46,24 +62,25 @@ export default function Checkout() {
   };
   return (
     <>
-      {/* <div className="Header" style={{ color: "gray" }}>
-        <h4>Company Name:</h4>
-        <h4>Adress:</h4>
-      </div> */}
-
       <label style={{ fontSize: "15px", margin: "10px" }}>
         Select Employee
       </label>
       <select
         style={{ maxWidth: "230px", margin: "10px" }}
         className="browser-default"
+        onChange={(e) => setSelectedEmployee(e.target.value)}
       >
         <option value="" disabled selected>
           Click and Choose your Barber
         </option>
-        <option value="1">João</option>
-        <option value="2">Pedro</option>
+        <option value="João">João</option>
+        <option value="Pedro">Pedro</option>
       </select>
+
+      {/* Para fazer o fetch especifico de cada profissional .  
+      const joaoAgendamentos = JSON.parse(localStorage.getItem("João"));  
+      const PedroAgendamentos = JSON.parse(localStorage.getItem("Pedro")); */}
+
       <div className="Calendar">
         <label
           style={{
@@ -107,13 +124,6 @@ export default function Checkout() {
           justifyContent: "center",
           color: "gray",
           fontSize: "30px",
-          //   maxWidth: "300px",
-          //   padding: "20px",
-          //   border: "1x solid #ccc ",
-          //   boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-          //   margin: "20px auto",
-          //   borderRadius: "5px",
-          //   backgroundColor: "#f9f9f9",
         }}
       >
         My basket
@@ -158,7 +168,6 @@ export default function Checkout() {
           Checkout
         </button>
       </div>
-
       {showForm && (
         <div style={{ display: "block" }}>
           <label style={{ margin: "10px" }} htmlFor="name">
@@ -203,3 +212,20 @@ export default function Checkout() {
     </>
   );
 }
+// const agendamento = JSON.parse(localStorage.getItem("nomeDoProfissional"));
+
+// localStorage.setItem(
+//   "nomeDoProfissional",
+//   JSON.stringify([...agendamento, { agendamentoAtual }])
+// );
+// const agendamento = JSON.parse(localStorage.getItem("nomeDoProfissional"))
+
+// localStorage.setItem("nomeDoProfissional", JSON.stringify([...agendamento, {agendamentoAtual}]))
+
+// localStorage é como se fosse uma variável. portanto, ficará da seguinte forma.
+
+// const yago = [{data: '', hora: "", nome: "", email: ""}]
+
+// Para fazer especifico de cada profissional o fetch.
+// const joaoAgendamentos = JSON.parse(localStorage.getItem("João"));
+// const PedroAgendamentos = JSON.parse(localStorage.getItem("Pedro"));

@@ -24,12 +24,22 @@ export default function Navbar() {
             <a href="/register">Register</a>
           </li>
           {isAuthenticated && (
-            <button
-              class="waves-effect waves-red btn-small red darken-3 "
-              onClick={handleLogout}
-            >
-              Logout
-            </button>
+            <>
+              <li>
+                <a href="/dashboard">Dashboard</a>
+              </li>
+              <li>
+                <a href="/clientsCalendar">Clients Calendar</a>
+              </li>
+              <li>
+                <button
+                  class="waves-effect waves-red btn-small red darken-3 "
+                  onClick={handleLogout}
+                >
+                  Logout
+                </button>
+              </li>
+            </>
           )}
         </ul>
       </div>
