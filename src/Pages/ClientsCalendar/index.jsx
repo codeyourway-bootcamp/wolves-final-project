@@ -12,7 +12,9 @@ function ClientsCalendar() {
 
   useEffect(() => {
     if (selectedEmployee) {
-      const filtrado = agendamentos.filter((item) => item.empregado === selectedEmployee);
+      const filtrado = agendamentos.filter(
+        (item) => item.empregado === selectedEmployee
+      );
       setAgendamentosFiltrados(filtrado);
     } else {
       setAgendamentosFiltrados(agendamentos);
@@ -26,18 +28,21 @@ function ClientsCalendar() {
   }, [isAuthenticated, navigate]);
 
   useEffect(() => {
-    const existingAgendamentos = JSON.parse(localStorage.getItem("agendamentos")) || [];
+    const existingAgendamentos =
+      JSON.parse(localStorage.getItem("agendamentos")) || [];
     setAgendamentos(existingAgendamentos);
     setAgendamentosFiltrados(existingAgendamentos);
   }, []);
   return (
-    <div style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      gap: "30px",
-      flexDirection: "column",
-    }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "30px",
+        flexDirection: "column",
+      }}
+    >
       <div
         style={{
           textAlign: "center",
@@ -49,7 +54,15 @@ function ClientsCalendar() {
         Clients Calendar
       </div>
       <div>
-        <label style={{ fontSize: "15px", margin: "10px" }}>
+        <label
+          style={{
+            fontSize: "15px",
+            margin: "10px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           Select Employee
         </label>
         <select
@@ -57,9 +70,9 @@ function ClientsCalendar() {
           className="browser-default"
           onChange={(e) => setSelectedEmployee(e.target.value)}
         >
-           <option value="" disabled selected>
-          Click and Choose your Barber
-        </option>
+          <option value="" disabled selected>
+            Click and Choose your Barber
+          </option>
           <option value="João">João</option>
           <option value="Pedro">Pedro</option>
         </select>
