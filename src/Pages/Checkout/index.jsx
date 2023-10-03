@@ -77,10 +77,6 @@ export default function Checkout() {
         <option value="Pedro">Pedro</option>
       </select>
 
-      {/* Para fazer o fetch especifico de cada profissional .  
-      const joaoAgendamentos = JSON.parse(localStorage.getItem("João"));  
-      const PedroAgendamentos = JSON.parse(localStorage.getItem("Pedro")); */}
-
       <div className="Calendar">
         <label
           style={{

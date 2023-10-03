@@ -1,8 +1,18 @@
 import React from "react";
 import ListEvents from "../../Components/ListEvents";
 // import { Container } from './styles';
+import { useEffect } from "react";
+import { useAuth } from "../../AuthContext";
+import { useNavigate } from "react-router-dom";
 
 function ClientsCalendar() {
+  const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate("/");
+    }
+  });
   const eventsListExemple = [
     {
       name: "Leticia",
