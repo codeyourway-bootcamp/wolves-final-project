@@ -42,12 +42,13 @@ export default function Checkout() {
         hora: selectedDate.format("HH:00"),
         nome: Form.name,
         email: Form.email,
+        empregado: selectedEmployee,
       };
       const existingAgendamentos =
-        JSON.parse(localStorage.getItem(selectedEmployee)) || [];
+        JSON.parse(localStorage.getItem("agendamentos")) || [];
 
       localStorage.setItem(
-        selectedEmployee,
+        "agendamentos",
         JSON.stringify([...existingAgendamentos, agendamentoAtual])
       );
 

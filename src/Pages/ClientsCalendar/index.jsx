@@ -1,27 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ListEvents from "../../Components/ListEvents";
-// import { Container } from './styles';
+import { useAuth } from "../../AuthContext";
+import { useNavigate } from "react-router-dom";
 
 function ClientsCalendar() {
-  const eventsListExemple = [
-    {
-      name: "Leticia",
-      date: "13/09/2023",
-      hour: "19:00",
-    },
-    {
-      name: "Jaklim",
-      date: "20/09/2023",
-      hour: "15:00",
-    },
-    {
-      name: "Fred",
-      date: "22/09/2023",
-      hour: "16:30",
-    },
-  ];
+  const { isAuthenticated } = useAuth();
+  const [agendamentos, setAgendamentos] = useState([]);
+  const [agendamentosFiltrados, setAgendamentosFiltrados] = useState([]);
+  const [selectedEmployee, setSelectedEmployee] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (selectedEmployee) {
+      const filtrado = agendamentos.filter((item) => item.empregado === selectedEmployee);
+      setAgendamentosFiltrados(filtrado);
+    } else {
+      setAgendamentosFiltrados(agendamentos);
+    }
+  }, [selectedEmployee, agendamentos]);
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate("/");
+    }
+  }, [isAuthenticated, navigate]);
+
+  useEffect(() => {
+    const existingAgendamentos = JSON.parse(localStorage.getItem("agendamentos")) || [];
+    setAgendamentos(existingAgendamentos);
+    setAgendamentosFiltrados(existingAgendamentos);
+  }, []);
   return (
-    <div>
+    <div style={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      gap: "30px",
+      flexDirection: "column",
+    }}>
       <div
         style={{
           textAlign: "center",
@@ -32,7 +48,23 @@ function ClientsCalendar() {
       >
         Clients Calendar
       </div>
-      <ListEvents data={eventsListExemple} />
+      <div>
+        <label style={{ fontSize: "15px", margin: "10px" }}>
+          Select Employee
+        </label>
+        <select
+          style={{ maxWidth: "230px", margin: "10px" }}
+          className="browser-default"
+          onChange={(e) => setSelectedEmployee(e.target.value)}
+        >
+           <option value="" disabled selected>
+          Click and Choose your Barber
+        </option>
+          <option value="João">João</option>
+          <option value="Pedro">Pedro</option>
+        </select>
+      </div>
+      <ListEvents data={agendamentosFiltrados} />
     </div>
   );
 }

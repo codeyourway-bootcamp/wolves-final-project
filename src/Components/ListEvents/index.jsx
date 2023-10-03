@@ -3,27 +3,29 @@ import React from "react";
 // import { Container } from './styles';
 
 function ListEvents(props) {
-  //console.log(props.data)
+  console.log(props.data)
   return (
-    <div style={{ margin: "40px", padding: "20px", color: "gray" }}>
+    <div style={{ margin: "40px", padding: "20px", color: "black", backgroundColor: "white", width: "80%", }}>
       <table>
         <thead>
-          <tr>
-            <th>Name</th>
+          <tr style={{ borderWidth: "3px"}}>
+            <th>Cliente</th>
             <th>Data</th>
             <th>Hora</th>
             <th>Email</th>
+            <th>Profissional</th>
           </tr>
         </thead>
 
         <tbody>
-          {props.data.map((item) => {
+          {props.data.map((item,index) => {
             return (
-              <tr key={item.name}>
-                <td>{item.name}</td>
-                <td>{item.date}</td>
-                <td>{item.hour}</td>
+              <tr style={{ borderWidth: "3px"}} key={index}>
+                <td>{item.nome}</td>
+                <td>{item.data}</td>
+                <td>{item.hora}</td>
                 <td>{item.email}</td>
+                <td>{item.empregado}</td>
               </tr>
             );
           })}
