@@ -59,7 +59,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/clientsCalendar" element={<ClientsCalendar />} />
+          <Route path="/clientscalendar" element={<ClientsCalendar />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
 
