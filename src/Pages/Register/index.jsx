@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Register() {
-  const [Form, setForm] = useState();
+  const [Form, setForm] = useState({});
   const navigate = useNavigate();
 
   const validateForm = () => {
@@ -12,6 +12,7 @@ export default function Register() {
       "name",
       "lastname",
       "companyname",
+      "adress",
       "password",
       "email",
     ];
@@ -62,7 +63,7 @@ export default function Register() {
                 type="text"
                 className="validate"
               />
-              <label for="first_name">First Name</label>
+              <label htmlFor="first_name">First Name</label>
             </div>
             <div className="input-field col s6">
               <input
@@ -72,7 +73,7 @@ export default function Register() {
                 type="text"
                 className="validate"
               />
-              <label for="last_name">Last Name</label>
+              <label htmlFor="last_name">Last Name</label>
             </div>
           </div>
           <div className="row">
@@ -86,22 +87,21 @@ export default function Register() {
                 type="text"
                 className="validate"
               />
-              <label for="">Company Name</label>
+              <label htmlFor="">Company Name</label>
             </div>
           </div>
-          {/* <div className="row">
-          <div className="input-field col s12">
-            <input
-              onChange={(e) =>
-                setForm({ ...Form, servicecategory: e.target.value })
-              }
-              id="company_name"
-              type="text"
-              className="validate"
-            />
-            <label for="">Service Category</label>
+          <div className="row">
+            <div className="input-field col s12">
+              <input
+                style={{ color: "white" }}
+                onChange={(e) => setForm({ ...Form, adress: e.target.value })}
+                id="adress"
+                type="text"
+                className="validate"
+              />
+              <label htmlFor="">Adress</label>
+            </div>
           </div>
-        </div> */}
           <div className="row">
             <div className="input-field col s12">
               <input
@@ -111,7 +111,7 @@ export default function Register() {
                 type="password"
                 className="validate"
               />
-              <label for="password">Password</label>
+              <label htmlFor="password">Password</label>
             </div>
           </div>
           <div className="row">
@@ -123,7 +123,7 @@ export default function Register() {
                 type="email"
                 className="validate"
               />
-              <label for="email">Email</label>
+              <label htmlFor="email">Email</label>
             </div>
           </div>
           <button onClick={handleSubmit} className="btn" type="submit">
