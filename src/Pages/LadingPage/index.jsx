@@ -28,6 +28,9 @@ export default function LandingPage() {
           We've got you covered. Happy booking!
         </div>
       </div>
+      <div>
+        <h1 class="text-central">Companies Available</h1>
+      </div>
       <div className="card-principal">
         <div className="card">
           <div className="card-image waves-effect waves-block waves-light">
@@ -37,6 +40,7 @@ export default function LandingPage() {
               alt=""
             />
           </div>
+
           <div className="card-content">
             <span className="card-title activator grey-text text-darken-4">
               Style & Tradition Barber Shop
@@ -91,6 +95,7 @@ export default function LandingPage() {
             </p>
           </div>
         </div>
+
         <div className="card">
           <div className="card-image waves-effect waves-block waves-light">
             <img
@@ -99,6 +104,7 @@ export default function LandingPage() {
               alt=""
             />
           </div>
+
           <div className="card-content">
             <span className="card-title activator grey-text text-darken-4">
               Style & Tradition Barber Shop
